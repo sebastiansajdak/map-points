@@ -1,0 +1,61 @@
+@import '../../variables.scss';
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    background: #eff1fa;
+
+    .filtersWrapper {
+        width: 250px;
+        height: 100%;
+        margin-left: -300px;
+        opacity: 0;
+        transition: all .2s ease;
+        overflow: auto;
+
+        &.open {
+            margin-left: 0;
+            opacity: 1;
+        }
+    }
+
+    .filters {
+        width: 100%;
+        padding: 20px;
+
+        .title {
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+
+            .count {
+                font-size: 12px;
+                font-weight: 100;
+                background: $topColor;
+                color: #fff;
+                padding: 2px 5px;
+                border-radius: 7px;
+                margin-left: 5px;
+            }
+        }
+
+        .subtitle {
+            font-weight: 600;
+            font-size: 18px;
+            margin: 25px 0 10px;
+        }
+
+        .checkboxText {
+            display: flex;
+            align-items: center;
+
+            .text {
+                margin-right: 20px;
+            }
+        }
+    }
+}

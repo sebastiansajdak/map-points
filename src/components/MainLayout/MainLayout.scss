@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    height: 100vh;
+    position: relative;
+
+    .leftBox {
+        position: relative;
+        height: 100vh;
+        box-shadow: 2px 0px 2px #d6d1d1;
+    }
+
+    .rightBox {
+        width: 100%;
+        position: relative;
+        z-index: 0;
+    }
+
+    .notification {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+    }
+}

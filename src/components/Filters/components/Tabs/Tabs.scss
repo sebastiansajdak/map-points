@@ -1,0 +1,110 @@
+@import '../../../../variables.scss';
+
+.wrapper {
+    $iconColor: #909090;
+    $activeIconColor: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    padding-right: 3px;
+    overflow: hidden;
+    z-index: 1;
+
+    .tabs {
+        background: #ffffff;
+        transform: skewY(-25deg);
+        box-shadow: 2px 2px 2px #e2e2e2;
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            position: relative;
+            transition: all .4s ease;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: -60px;
+                background: $topColor;
+                transition: all .2s ease;
+                border-top-right-radius: 2px;
+            }
+
+            &:not(.logo):hover:before {
+                left: -42px;
+            }
+
+            &.logo {
+                height: 60px;
+
+                .img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .imgWrapper {
+                max-width: 100%;
+                max-height: 100%;
+                padding: 12px;
+                transform: skewY(25deg);
+
+                .icon {
+                    width: 100%;
+                    height: 100%;
+
+                    path {
+                        fill: $iconColor;
+                        stroke: $iconColor;
+                    }
+                }
+            }
+
+            &.active {
+                background: $topColor;
+                box-shadow: 0px 0px 5px $topColor;
+
+                .icon {
+                    path {
+                        fill: $activeIconColor;
+                        stroke: $activeIconColor;
+                    }
+                }
+            }
+        }
+
+        &.topTabs {
+            padding: 30px 0 0;
+            margin-top: -25px;
+            border-bottom-right-radius: 7px;
+
+            .item {
+                &:last-child {
+                    border-bottom-right-radius: 7px;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        &.bottomTabs {
+            border-top-right-radius: 7px;
+            margin-bottom: -12px;
+
+            .item {
+                &:first-child {
+                    height: 60px;
+                    border-top-right-radius: 7px;
+                }
+            }
+        }
+    }
+}
